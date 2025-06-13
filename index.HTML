@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="" type="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.CSS">
+</head>
+<body>
+    <div class="crud">
+        <div class="head">
+            <h2>Tera store</h2>
+            <p>PRODUCT MANEGMENT SYSTEM</p>
+        </div>
+
+        <div class="inputs">
+            <input type="text" id="title" placeholder="title">
+
+            <div class="price">
+                <input onkeyup="getTotal()" type="number" id="price" placeholder="price">
+                <input onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes">
+                <input onkeyup="getTotal()" type="number" id="ads" placeholder="ads">
+                <input onkeyup="getTotal()" type="number" id="discount" placeholder="discount">
+                <small id="total"></small>
+            </div>
+
+            <input type="text" id="count" placeholder="count">
+            <input type="text" id="category" placeholder="category">
+
+            <button id="submit">create</button>
+
+
+        </div>
+
+        <div class="outputs">
+            <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="search">
+            <div class="btnSearch">
+                <button onclick="getSearchMood(this.id)" id="searchByTitle">search by title</button>
+                <button onclick="getSearchMood(this.id)" id="searchByCategory">search by category</button>
+            </div>
+        </div>
+        <div class="btns">
+            <button id="deleteAll">delete all <span id="productCount"></span></button>
+<script>
+    // Connect the deleteAll button to the function in script.js
+    document.getElementById('deleteAll').onclick = deleteAll;
+</script>
+        </div>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Taxes</th>
+                <th>Ads</th>
+                <th>Discount</th>
+                <th>Total</th>
+
+                <th>Category</th>
+                <th>update</th>
+                <th>delete</th>
+            </tr>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html> 
